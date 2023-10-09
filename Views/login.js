@@ -35,14 +35,14 @@ registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   let data = Object.fromEntries(new FormData(e.target));
 
-  var user = {
+  const user = {
     userName: data.UserName,
     email: data.Email,
     password: data.Password,
     phone: data.Phone,
   };
 
-  var Dates = JSON.stringify(user);
+  const Dates = JSON.stringify(user);
 
   const options = {
     method: "POST",
@@ -72,12 +72,12 @@ loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   let data = Object.fromEntries(new FormData(e.target));
 
-  var user = {
+  const user = {
     userName: data.UserName,
     password: data.Password,
   };
 
-  var Dates = JSON.stringify(user);
+  const Dates = JSON.stringify(user);
 
   const options = {
     method: "POST",
@@ -100,8 +100,8 @@ loginForm.addEventListener("submit", async (e) => {
       return result;
     });
 
-    let id = userValidate.id;
-    console.log(id);
+  let id = userValidate.id;
+  console.log(id);
   const response = await fetch(`${sendSMSUrl}/${id}`, {
     method: "GET",
     headers: {
@@ -111,26 +111,21 @@ loginForm.addEventListener("submit", async (e) => {
   if (response.ok) {
     console.log(response);
   } else {
-    console.error(
-      "Failed:",
-      response.statusText
-      );
-      alert(
-        `Failed - Error: ${response.status}: ${response.statusText}`
-        );
-      }
-      validateCode(id)
+    console.error("Failed:", response.statusText);
+    alert(`Failed - Error: ${response.status}: ${response.statusText}`);
+  }
+  validateCode(id);
 });
 
-function validateCode(id) {
-  const textoIngresado = prompt("Por favor, ingresa un texto:");
-  var user = {
-    id: id,
-    code: textoIngresado,
+function validateCode(_id) {
+  const _code = prompt("Please enter the code sent:");
+  const user = {
+    id: _id,
+    code: _code,
   };
-  
-  var Dates = JSON.stringify(user);
-  
+
+  const Dates = JSON.stringify(user);
+
   const options = {
     method: "POST",
     headers: {
@@ -149,7 +144,7 @@ function validateCode(id) {
       return response.json();
     })
     .then((result) => {
-      alert("Authentication successfully")
+      alert("Authentication successfully");
       console.log(result);
     });
 }

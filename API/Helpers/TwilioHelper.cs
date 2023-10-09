@@ -11,10 +11,10 @@ public class TwilioHelper
     public string SendSMSMessage(string toMobilePhone, string messageToSend)
     {
 
-    TwilioClient.Init(
-                _smsSettings.Twilio_Account_SID,
-                _smsSettings.Twilio_Auth_TOKEN
-            );
+        TwilioClient.Init(
+                    _smsSettings.Twilio_Account_SID,
+                    _smsSettings.Twilio_Auth_TOKEN
+                );
 
         if (messageToSend.Length > 160)
             messageToSend = messageToSend.Substring(0, 160);

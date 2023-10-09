@@ -64,9 +64,9 @@ public class UserRepository : IUser
     public virtual async Task<IEnumerable<User>> GetAllAsync() => await GetAll();
     public virtual async Task<IEnumerable<User>> GetAllAsync(Expression<Func<User, bool>> expression) => await GetAll(expression);
     public virtual string GenerateRandomTwoSecret()
-        {
-            Random random = new Random();
-            int randomNumber = random.Next(100000, 1000000);
-            return randomNumber.ToString();
-        }
+    {
+        Random random = new Random();
+        int randomNumber = random.Next(100000, 1000000);
+        return randomNumber.ToString();
+    }
 }
