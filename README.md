@@ -7,6 +7,7 @@ Este proyecto se centra en la implementación de la autenticación en dos factor
 - [Descripción](#descripción)
 - [Características](#características)
 - [Instalación](#instalación)
+- [Video](https://youtu.be/gJ3Wdb8qoU4?si=-yhyfhnjM3zqMLPx)
 
 ## Descripción
 
@@ -33,22 +34,21 @@ git clone https://github.com/Juarika/TwoStepAuth.git
 2. Creacion de base de datos:
 
 ```bash
-cd TwoStepAuth/API
+cd TwoStepAuth/API &&
 dotnet ef database update --project ./Persistence/ --startup-project ./API/
 ```
 
 3. Creacion de cuenta twilio:
-   -Igresa al link https://www.twilio.com/try-twilio y crea tu cuenta.
-   -En el panel de la izquierda ingresamos a Phone Numbers/Mange/Buy a Number (Twilio obsequia $15 para pruebas).
-   -Verifica que tu numero esta verificado en Phone Numbers/Mange/Verified Caller IDs.
-   -En la parte superior izquierda nos dirigimos al panel de la consola, alli encontraras tu Account Info (Account SID, Auth Token, My Twilio phone number).
+   -Igresa al link https://www.twilio.com/try-twilio y crea tu cuenta.  
+   -En el panel de la izquierda ingresamos a Phone Numbers/Mange/Buy a Number (Twilio obsequia $15 para pruebas).  
+   -Verifica que tu numero esta verificado en Phone Numbers/Mange/Verified Caller IDs.  
+   -En la parte superior izquierda nos dirigimos al panel de la consola, alli encontraras tu Account Info (Account SID, Auth Token, My Twilio phone number).  
 
 4. En el proyecto ingresamos a API/Helpers/SMSSettings.cs, y ingresamos los datos requeridos (Twilio_Account_SID = Account SID, Twilio_Auth_TOKEN = Auth Token, Twilio_Phone_Number = My Twilio phone number).
 
-5. Poner en funcionamiento la base de datos:
+5. Poner en funcionamiento la base de datos (Desde API):
 
 ```bash
-cd TwoStepAuth/API
 dotnet run
 ```
 
