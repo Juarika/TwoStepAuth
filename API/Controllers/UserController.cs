@@ -40,7 +40,29 @@ public class UserController : Controller
         }
         return CreatedAtAction(nameof(Post), new { id = user.Id }, user);
     }
-
+    [HttpPost("Login")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult> Login([FromBody] LoginDto loginDto)
+    {
+        try
+        {
+            User user = await _unitOfWork.Users.FindFirst(p => p.UserName == loginDto.UserName);
+            if (user.Password == loginDto.Password)
+            {
+                return Ok(user);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.Message);
+            return BadRequest("error, some error occurred");
+        }
+    }
     [HttpGet("GenerateSMS/{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -73,7 +95,7 @@ public class UserController : Controller
                 user.TwoSecret = newTwoSecret;
                 _unitOfWork.Users.Update(user);
                 await _unitOfWork.SaveAsync();
-                return Ok("Verified User.");
+                return Ok(new { message = "Verified User." });
             }
             else
             {

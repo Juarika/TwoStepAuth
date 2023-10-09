@@ -10,7 +10,7 @@ public class SMSSettings
     public string Twilio_Auth_TOKEN {
         get
         {
-            return "45e3fb38c5630c3d46cb91d7d19cbb33";
+            return "ba35c18e810f5ad7157b11c876603313";
         }
     }
     public string Twilio_Phone_Number

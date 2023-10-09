@@ -67,6 +67,6 @@ app.UseCors("CorsPolicy");
 
 app.MapControllers();
 
-app.Run();
-
 app.UseIpRateLimiting();
+
+app.Run();

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+
+  <body>
+    <div class="hero">
+      <div class="main-box">
+        <div class="form-box">
+          <div id="after"></div>
+          <div class="button-box">
+            <div class="btn" id="btn"></div>
+            <button 
+			  id="log" 
+			  type="button" 
+			  class="toggle-btn" 
+			  onclick="login()">
+              Log in
+            </button>
+            <button
+              id="reg"
+              type="button"
+              class="toggle-btn"
+              onclick="register()"
+            >
+              Sign up
+            </button>
+          </div>
+          <form id="login" class="input-group">
+            <input
+              type="text"
+              class="input-field"
+              placeholder="UserName"
+              name="UserName"
+              required
+            />
+            <input
+              id="pwd"
+              type="Password"
+              class="input-field"
+              placeholder="Password"
+              name="Password"
+              required
+            />
+            <input type="submit" class="submit-btn" value="Log in" />
+          </form>
+          <form id="register" class="input-group">
+            <input
+              type="text"
+              class="input-field"
+              placeholder="UserName"
+              name="UserName"
+              required
+            />
+			<input
+              type="text"
+              class="input-field"
+              placeholder="Phone"
+              name="Phone"
+              required
+            />
+            <input
+              type="email"
+              class="input-field"
+              placeholder="Email"
+              name="Email"
+              required
+            />
+            <input
+              id="pwd"
+              type="Password"
+              class="input-field"
+              placeholder="Password"
+              name="Password"
+              required
+            />
+            <input type="submit" class="submit-btn" value="Register" />
+          </form>
+		  
+		  <!-- <form id="login" class="input-group">
+            <input
+              type="text"
+              class="input-field"
+              placeholder="User"
+              required
+            />
+            <input
+              id="pwd"
+              type="Password"
+              class="input-field"
+              placeholder="Password"
+              required
+            />
+            <input type="submit" class="submit-btn" value="Log in" />
+          </form> -->
+        </div>
+        <span class="sp sp-t"></span>
+        <span class="sp sp-r"></span>
+        <span class="sp sp-b"></span>
+        <span class="sp sp-l"></span>
+      </div>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>
