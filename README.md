@@ -38,8 +38,8 @@ cd TwoStepAuth/API &&
 dotnet ef database update --project ./Persistence/ --startup-project ./API/
 ```
 
-3. Creacion de cuenta twilio:
-   -Igresa al link https://www.twilio.com/try-twilio y crea tu cuenta.  
+3. Creacion de cuenta twilio:  
+   -Ingresa al link https://www.twilio.com/try-twilio y crea tu cuenta.  
    -En el panel de la izquierda ingresamos a Phone Numbers/Mange/Buy a Number (Twilio obsequia $15 para pruebas).  
    -Verifica que tu numero esta verificado en Phone Numbers/Mange/Verified Caller IDs.  
    -En la parte superior izquierda nos dirigimos al panel de la consola, alli encontraras tu Account Info (Account SID, Auth Token, My Twilio phone number).  
