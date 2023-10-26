@@ -81,6 +81,9 @@ public class UserController : Controller
             return BadRequest("error, some error occurred");
         }
     }
+
+
+    
     [HttpPost("ValidateSMS")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

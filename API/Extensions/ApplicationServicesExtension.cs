@@ -1,17 +1,10 @@
-using System.Text;
 using Application.UnitOfWork;
-// using API.Helpers;
-// using API.Services;
-// using Aplicacion.UnitOfWork;
 using AspNetCoreRateLimit;
 using Domain.Entities;
 using Domain.Interfaces;
-// using Domain.Interfaces;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
-using Microsoft.IdentityModel.Tokens;
 
 namespace API.Extensions;
 
@@ -29,7 +22,6 @@ public static class ApplicationServiceExtension
     public static void AddAplicacionServices(this IServiceCollection services)
     {
         services.AddScoped<IUnitOfWork, UnitOfWork>();
-        // services.AddScoped<IUserService, UserService>();
         services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
     }
 
@@ -64,7 +56,7 @@ public static class ApplicationServiceExtension
             options.AssumeDefaultVersionWhenUnspecified = true;
             options.ApiVersionReader = ApiVersionReader.Combine(
                 new QueryStringApiVersionReader("ver"),
-                new HeaderApiVersionReader("X-Version")   
+                new HeaderApiVersionReader("X-Version")
             );
             // options.ReportApiVersions = true;
         });

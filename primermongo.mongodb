@@ -1,0 +1,11 @@
+use("mi_db")
+db.productos.updateOne(
+//query
+{_id: 2},
+//operaciones de actualización
+{
+$set: {
+nombre: "Prod 2 modificado",
+}
+}
+)
